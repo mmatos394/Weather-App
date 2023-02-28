@@ -1,15 +1,16 @@
 body {
-  background: #b4f1f1;
+  background: #ffc97b;
 }
 .weather-app {
   display: block;
-  background: #ecfffb;
+  background: #fff;
   border-radius: 30px;
-  border: 1px solid #ecfffb;
+  border: 1px solid #fff;
   padding: 40px;
   margin: 100px auto;
   width: 600px;
   height: 450px;
+  opacity: 90%;
 }
 .searchbar {
   font-family: "Dosis", sans-serif;
