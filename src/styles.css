@@ -1,5 +1,9 @@
 body {
-  background: #dc7646;
+  background: radial-gradient(
+    circle at -2.2% -3.8%,
+    rgba(255, 227, 2, 0.41) 0%,
+    rgb(59, 188, 241) 100.2%
+  );
 }
 .weather-app {
   display: block;
