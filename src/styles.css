@@ -1,0 +1,96 @@
+body {
+  background: #dc7646;
+}
+.weather-app {
+  display: block;
+  background: white;
+  border-radius: 30px;
+  border: 1px solid white;
+  padding: 40px;
+  margin: 100px auto;
+  width: 600px;
+  height: 450px;
+}
+.searchbar {
+  font-family: "Dosis", sans-serif;
+}
+.submitButton {
+  font-family: "Dosis", sans-serif;
+}
+
+.currentButton {
+  display: block;
+  width: 100%;
+
+  font-size: 1rem;
+  font-weight: 400;
+
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-family: "Dosis", sans-serif;
+}
+
+.form-control {
+  border-color: black;
+}
+
+.info {
+  position: relative;
+  bottom: -10px;
+}
+
+h2 {
+  line-height: 20px;
+  font-size: medium;
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+}
+
+.description {
+  text-align: center;
+  font-size: medium;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+  position: relative;
+  bottom: 50px;
+}
+
+p {
+  font-size: medium;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  position: relative;
+  bottom: 60px;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+}
+.today-temperature {
+  position: relative;
+  bottom: 50px;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+a {
+  text-align: center;
+  font-size: medium;
+  color: blue;
+  text-decoration: none;
+}
+.sun {
+  position: relative;
+  bottom: 50px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: large;
+}
+.col {
+  font-size: larger;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+}
