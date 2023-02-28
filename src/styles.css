@@ -4,6 +4,7 @@ body {
     rgba(255, 227, 2, 0.41) 0%,
     rgb(59, 188, 241) 100.2%
   );
+  width: 100%;
 }
 .weather-app {
   display: block;
