@@ -94,3 +94,23 @@ a {
   font-family: "Dosis", sans-serif;
   font-weight: 300;
 }
+
+.openSource {
+  position: relative;
+  bottom: 100px;
+  display: block;
+  width: 0 100%;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+}
+
+.myName {
+  position: relative;
+  bottom: 100px;
+  display: block;
+  width: 0 100%;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+}
