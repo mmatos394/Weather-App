@@ -1,11 +1,11 @@
 body {
-  background: #ffc97b;
+  background: #acdcee;
 }
 .weather-app {
   display: block;
-  background: #fff;
+  background: #f0fbff;
   border-radius: 30px;
-  border: 1px solid #fff;
+  border: 1px solid #f0fbff;
   padding: 40px;
   margin: 100px auto;
   width: 600px;
