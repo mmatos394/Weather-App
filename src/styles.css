@@ -56,6 +56,12 @@ h2 {
   bottom: 50px;
 }
 
+img {
+  display: block;
+  text-align: center;
+  margin: -70px auto;
+}
+
 p {
   font-size: medium;
   font-family: "Dosis", sans-serif;
@@ -82,14 +88,7 @@ a {
   color: blue;
   text-decoration: none;
 }
-.sun {
-  position: relative;
-  bottom: 50px;
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  font-size: large;
-}
+
 .col {
   font-size: larger;
   font-family: "Dosis", sans-serif;

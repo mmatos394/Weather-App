@@ -80,6 +80,7 @@ function showTemperature(response) {
   cityName.innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#today-temp-display");
+  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = `${temperature}°C`;
   document.querySelector(
     "#humidity"
@@ -90,6 +91,11 @@ function showTemperature(response) {
   document.querySelector(
     "#description"
   ).innerHTML = ` ${response.data.weather[0].main}`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function displayWeatherCondition(response) {
