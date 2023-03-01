@@ -89,8 +89,9 @@ a {
   text-decoration: none;
 }
 
-.col {
-  font-size: larger;
+.max-min-temp {
+  text-align: center;
+  font-size: medium;
   font-family: "Dosis", sans-serif;
   font-weight: 300;
 }
