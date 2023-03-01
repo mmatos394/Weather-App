@@ -36,6 +36,19 @@ let months = [
 ];
 let month = months[now.getMonth()];
 displayDate.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
+
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", toFahrenheit);
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", toCelsius);
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 function toFahrenheit(event) {
   event.preventDefault();
   let celsiusDegrees = parseFloat(
@@ -45,14 +58,12 @@ function toFahrenheit(event) {
   let fahrenheitDegrees = document.querySelector("#today-temp-display");
   fahrenheitDegrees.innerHTML = `${fahrenheitConversion}°F`;
 }
-let fahrenheit = document.querySelector("#fahrenheit-link");
-fahrenheit.addEventListener("click", toFahrenheit);
+
 function toCelsius(event) {
   event.preventDefault();
   document.querySelector("#today-temp-display").innerHTML = `13°C`;
 }
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", toCelsius);
+
 function showCity(event) {
   event.preventDefault();
   let displayCity = document.querySelector("h1");
@@ -66,8 +77,6 @@ function searchCity(city) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-city");
@@ -75,7 +84,6 @@ function handleSubmit(event) {
   searchCity(city);
 }
 function showTemperature(response) {
-  console.log(response);
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
@@ -113,8 +121,5 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Lisbon");
