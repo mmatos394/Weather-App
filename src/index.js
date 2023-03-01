@@ -49,6 +49,31 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            
+  <div class="col-2">${day}
+  <br/>
+                <span class="minimum-temperature">18°C </span>
+                <span class="maximum-temperature">20°C</span>
+                <div class="col-2">☀</div>
+                
+  
+               
+            
+          </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function toFahrenheit(event) {
   event.preventDefault();
   let celsiusDegrees = parseFloat(
@@ -123,3 +148,4 @@ function getCurrentLocation(event) {
 }
 
 searchCity("Lisbon");
+displayForecast();
