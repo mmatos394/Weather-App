@@ -37,12 +37,6 @@ let months = [
 let month = months[now.getMonth()];
 displayDate.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 
-let fahrenheit = document.querySelector("#fahrenheit-link");
-fahrenheit.addEventListener("click", toFahrenheit);
-
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", toCelsius);
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
@@ -85,16 +79,6 @@ function displayForecast(response) {
   });
 
   forecastElement.innerHTML = forecastHTML;
-}
-
-function toFahrenheit(event) {
-  event.preventDefault();
-  let celsiusDegrees = parseFloat(
-    document.querySelector("#today-temp-display").textContent
-  );
-  let fahrenheitConversion = Math.round((celsiusDegrees * 9) / 5 + 32);
-  let fahrenheitDegrees = document.querySelector("#today-temp-display");
-  fahrenheitDegrees.innerHTML = `${fahrenheitConversion}°F`;
 }
 
 function toCelsius(event) {
