@@ -49,26 +49,39 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-            
-  <div class="col-2">${day}
-  <br/>
-                <span class="minimum-temperature">18°C </span>
-                <span class="maximum-temperature">20°C</span>
-                <div class="col-2">☀</div>
-                
-  
-               
-            
-          </div>`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+<div class="col-2"> 
+  <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+  <br /> 
+  <div class="col-2">  
+    <img src="https://openweathermap.org/img/wn/${
+      forecastDay.weather[0].icon
+    }@2x.png"
+         alt="Weather icon" width="42"/> 
+    <div class="weather-forecast-temperatures"><strong>${Math.round(
+      forecastDay.temp.max
+    )}°</strong>${Math.round(forecastDay.temp.min)}°</div>
+  </div>
+</div>`;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
@@ -117,7 +130,6 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);

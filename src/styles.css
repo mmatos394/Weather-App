@@ -96,6 +96,25 @@ a {
   font-weight: 300;
 }
 
+.weather-forecast-date {
+  position: relative;
+  bottom: 50px;
+  text-align: center;
+  font-size: medium;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+}
+
+.weather-forecast-temperatures {
+  position: relative;
+  bottom: -60px;
+  margin: 100%;
+  text-align: center;
+  font-size: medium;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+}
+
 .openSource {
   position: relative;
   bottom: 100px;
