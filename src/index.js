@@ -50,7 +50,6 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 function displayForecast() {
-  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -118,6 +117,7 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
+  console.log(response.data);
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
